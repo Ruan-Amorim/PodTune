@@ -1,0 +1,735 @@
+/* ~~~~~~~~~~ ANIMAÇÕES  ~~~~~~~~~~ */
+@keyframes bordalad {
+    1% {
+        box-shadow: 0px 0px 20px #262d4c;
+        border: 1px double #6042c6d7;
+    }
+    15% {
+        box-shadow: 0px 0px 20px #9022daa9;
+        border: 1px double rgba(97, 66, 198, 0.945);
+    }
+    30% {
+        box-shadow: 0px 0px 20px #c41650af;
+        border: 1px double #c41650dc;
+    }
+    50% {
+        box-shadow: 0px 0px 20px #b91de0a1;
+        border: 1px double #b91de0e0;
+    }
+    75% {
+        box-shadow: 0px 0px 20px #e20c668c;
+        border: 1px double #e20c65d7;
+    }
+    100% {
+        box-shadow: 0px 0px 20px #262d4c;
+        border: 1px double #6042c6d7;
+    }
+}
+@keyframes backgroundAnimation {
+    0%{
+        background:  linear-gradient(60deg, #000011, #040442ed,#01012b, #000011);
+    }
+    10% {
+        background:  linear-gradient(60deg, #000011, #000011, #040442ed,#01012b);
+    }
+    20%{
+        background:  linear-gradient(60deg,#01012b, #000011, #000011, #040442ed);
+    }
+    30%{
+        background:  linear-gradient(60deg,#040442ed, #01012b, #000011, #000011);
+    }
+    40%{
+        background:  linear-gradient(60deg, #000011, #040442ed, #01012b, #000011);
+    }
+    50%{
+        background:  linear-gradient(60deg, #000011, #040442ed,#01012b, #000011);
+    }
+    60% {
+        background:  linear-gradient(60deg, #000011, #000011, #040442ed,#01012b);
+    }
+    70%{
+        background:  linear-gradient(60deg,#01012b, #000011, #000011, #040442ed);
+    }
+    80%{
+        background:  linear-gradient(60deg,#040442ed, #01012b, #000011, #000011);
+    }
+    90%{
+        background:  linear-gradient(60deg, #000011, #040442ed, #01012b, #000011);
+    }
+    100%{
+        background:  linear-gradient(60deg, #000011, #000011, #040442ed, #01012b);
+    }
+
+}
+/* ~~~~~~ configurações Gerais  ~~~~~~ */
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+}
+html,body{
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background:  linear-gradient(60deg, #000011e8, #040442e8,#01012bea, #000011ea);
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Versões mais recentes do Chrome e Opera */
+    transition: all 0.2s ease-in-out;
+
+    background-position: center;
+    background-size: cover;
+    transition: filter 0.5s;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+main{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+}
+a{
+    color: whitesmoke;
+    text-decoration: none;
+}
+p{
+    color: whitesmoke;
+}
+ul, li{
+    list-style: none;
+    text-decoration: none;
+    color: whitesmoke;
+}
+h1,h2,h3,h4,h5,h6{
+    margin: auto;
+    color: whitesmoke;
+    text-shadow: 0px 0px 10px #672f8dd3;
+}
+/* ~~~~~~~~~~~ header ~~~~~~~~~~ */
+nav{
+    display: flex;
+    z-index: 1000;
+}
+header > nav > h1{
+    display: flex;
+    margin: 10px auto auto auto;
+    font-size: 2.1em;
+    text-align: center;
+    transform: translateX(-15%);
+    z-index: 2;
+}
+
+#menuBurguer{
+    display: flex;
+    margin: 13px 10px 10px 10px;
+    transform: translateX(10px);
+    font-size: 2em;
+    color: whitesmoke;
+}
+ul#menu{
+    position: absolute;
+    display: none;
+    width: 150px;
+    height: 100vh;
+    padding: 0 10px;
+    text-align: center;
+    list-style: none;
+    background: linear-gradient(60deg,#000021, #00012b 20%, #000021);
+    border-radius: 0px 0px 10px 0px;
+    box-shadow: 0px 0px 20px #262d4c;
+    border-right: 1px double #6042c6d7;
+    transition: 0.6s ease-out;
+    overflow-y: auto;
+    z-index: 1001;
+}
+#menu > li {
+    font-size: 1.2em;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    text-shadow: 1px 1px 5px #000013dd;
+    letter-spacing: 1px;
+}
+#menu > li:hover, #menuBurguerExit:hover, header > nav > h1:hover, #menuBurguer:hover, .icon-menu:hover, .mp3-arrow-right:hover, .mp3-arrow-left:hover , .botao-mp3:hover, .ver-mais:hover{
+    color: #6042c6d7;
+    text-shadow: 1px 1px 5px #271b51ca;
+    transition: 0.2s ease-out;
+}
+
+.icon-menu{
+    margin-right: 4px;
+    font-size: 1.1em;
+    color: #6042c6d7;
+    text-shadow: 1px 1px 5px #121524da;
+    transform: translateY(2px);
+}
+/* ~~~~~~~~~~~ section mp3 ~~~~~~~~~~~ */
+.section-mp3{display: flex;margin-top: 30px;}
+.MP3{
+    width: 270px;
+    height: 460px;
+    max-width: 400px;
+    max-height: 600px;
+    margin: 20px auto;
+    padding: 10px;
+    align-items:  center;
+    text-align: center;
+    border-radius: 20px;
+    background: linear-gradient(60deg,#01012b,#070741, #000122); 
+    background-size: auto;
+    box-shadow: 0px 0px 20px #262d4c;
+    border: 1px double #6042c6d7;
+    transform: perspective(1000px) ;
+    animation: 3s;
+}
+.MP3::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background:  linear-gradient(60deg, #0000113f, #0404424d,#01012b54, #0000114f);
+    backdrop-filter: blur(9px);
+    z-index: -1;
+}
+.image-capa{    
+    width: 75%;
+    height: 48%;
+    margin: auto;
+    border-radius: 20px ;
+    border: 1px double #6042c6d7;
+    box-shadow: 0px 0px 10px #262d4c;
+    transform: translateY(-25px) ;
+    animation: 3s ;
+}
+.nome-cantor{
+    margin: 10px auto 5px auto;
+    text-align: center;
+    text-shadow: 1.5px 2.5px 3px #262d4c;
+    transform: translateY(-20px);
+}
+.nome-music{
+    font: 1.1em;
+    font-style: italic;
+    text-shadow: 1.5px 2.5px 5px #000000;
+    transform: translateY(-10px);
+}
+.mp3-arrow-right{
+    position: relative;
+    max-height: 50px;
+    transform: translateY(250px) translateX(45px) scale(1.2); 
+    z-index: 10;
+}
+.mp3-arrow-left{
+    position: relative;
+    max-height: 50px;    
+    transform: translateY(250px) translateX(-38px) scale(1.2);
+    z-index: 10;
+}
+/* ~~~~~ controls barra tempo ~~~~~ */
+.container-barra-tempo{
+    margin-top: 10px;
+}
+progress::-webkit-progress-value {
+    background: #6042c6d7; /* Cor da barra de progresso */
+}
+.barra-music{
+    display: block;
+    width: 90%;
+    height: 12px;
+    margin: auto; 
+    border-radius: 20px;
+    overflow: hidden;
+}
+.tempo-music{
+    display: flex;
+    width: 90%;
+    margin: 3px auto;
+    font-size: 0.8em;
+    font-style: italic;
+    justify-content: space-between;
+}
+/* ~~~~~~~~~ controls MP3 ~~~~~~~~~ */
+.botoes-controle-music{
+    margin-top: 20px;
+}
+.botoes-controle-music{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.botao-mp3{
+    margin: 15px;
+    font-size: 3em;
+    filter: drop-shadow(0.5px 0.5px 5px #262d4c);
+}
+.botao-play-music{
+    display: block;
+    font-size: 4em;
+    transform: translateY(-7px);
+}
+.botao-pause-music{
+    display: none;
+    font-size: 4em;
+    transform: translateY(-7px);
+}
+.botao-avancar-music{
+    transform: scaleX(-1);
+}
+/* ~~~~~~~ Section main_musicas ~~~~~~~ */
+#main_musicas, #container-musicas, #container-explore-tipos-de-musicas > ul > ul{
+    margin: 20px 0px;
+    text-align: center;    
+    margin: 0px 5px;
+}
+#main_musicas > h2, #container-musicas > h2{
+    margin: 50px auto 20px auto;
+    font-size: 1.6em;
+}
+#main_musicas > ul > li, #lista-musicas > li, #container-explore-tipos-de-musicas > ul > ul > li{
+    background: linear-gradient(60deg,#01012bda,#070741d3, #000122ce); 
+}
+#main_musicas > ul > li, .li-p, #lista-musicas > li,#container-explore-tipos-de-musicas > ul > ul > li, #lista-de-podcasts > ul > li{
+    display: flex;
+    height: 110px;
+    margin: auto;
+    padding: 10px;
+    text-align: left;
+    color: whitesmoke;
+    box-shadow: 0px 0px 15px #262d4c;
+    border: 1px double #6042c6d7;
+}
+#main_musicas > ul > li > p, #lista-musicas > li > p, #playlistMusicArtistas > li > p, #container-explore-tipos-de-musicas > ul > ul > li > p, #lista-de-podcasts > ul > li > p{
+    margin: auto auto auto 0;
+    transform: translateY(-2.5px);
+}
+#main_musicas > ul > li > p:hover, #main_musicas > ul > div> li > p:hover, #container-explore-tipos-de-musicas > ul > ul > li > p:hover,#lista-de-podcasts > ul > li > p:hover, .item-aside > a:hover{
+    font-size: 17px;
+    transition: all 0.2s ease-in-out;
+}
+
+.ver-mais{
+    height: 30px;
+    margin: auto auto 50px auto;
+    padding: 5px;
+    line-height: 30px;
+    color: whitesmoke;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: 0px 0px 20px #262d4c;
+    border: 1px double #6042c6d7;
+}
+.small-music-image, #lista-de-podcasts > ul > li > img {
+    width: 60px;
+    min-height: 60px;
+    background-size: cover;
+    margin: auto 15px auto 15px;
+    padding: 5px;
+    border: 0.4px double #6042c6d7;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px #343e6b;
+    }
+/* ~~~~~~~ Section mais tocadas ~~~~~~~ */
+.mais_tocadas > div{
+    display: flex;
+    width: 100%;
+    margin: auto;
+    justify-content: space-between;
+}
+.mais_tocadas > div > li {
+    scale: 0.9;
+    width: 35%;
+    height: 12%;
+    max-height: 123px;
+    max-width: 200px;
+    margin: 10px auto 10px auto;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 20px #262d4c;
+    border: 1px double #6042c6d7;
+    background: linear-gradient(60deg,#01012b,#000122); 
+}
+.mais_tocadas > div > li > p{
+    max-width: 200px;
+    margin-top: 3px;
+}
+/* ~~~~~~~ container-favoritos ~~~~~~~ */  
+
+#container-favoritos{
+    align-items: center;
+    text-align: center;
+}
+/* ~~~~~~~ WEB ARTISTAS ~~~~~~~ */
+
+#container_lista_artistas > ul{
+    text-align: center;
+    padding-bottom: 50px;
+}
+#container_lista_artistas > ul > li{
+    display: inline-block;
+    width: 40%;
+    height: 100px;
+    margin:  10px 10px 50px 10px;
+    border-radius: 10px 3px; 
+    box-shadow: 0px 0px 15px #262d4c;
+    border: 1px double #6042c6d7;
+    background: linear-gradient(60deg,#01012bda,#070741d3, #000122ce); 
+    transform: translateY(50px);
+    justify-content: space-between;
+}
+
+#container_lista_artistas > ul > li > img {
+    display: block;
+    width: 40%;
+    height: 100%;
+    border-radius: 10px 3px 10px 3px;
+    box-shadow: 0px 0px 10px #262d4c;
+    border: 1px double #6042c6d7;
+}
+#container_lista_artistas > ul > li > h3 {
+    display: inline-block;
+    width: 60%;
+    height: 100%;
+    transform: translateY(-60px) translateX(50px);
+}
+
+#container_lista_artistas > ul > li > h3:hover {
+    transition: 0.3s;
+    color: #6042c6d7;
+}
+
+/* ~~~~~~~ PLAYER-MUSIC-ARTISTAS ~~~~~~~ */
+#playerMusicArtistas {
+    width: 60%;
+    height: 80vh;
+    min-width: 285px;
+    min-height: 520px;
+    max-width: 290px;
+    margin: auto;
+    padding: 7px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px #262d4c;
+    border: 1px double #6042c6d7;
+    background: linear-gradient(60deg,#01012bda,#070741d3, #000122ce); 
+}
+#playerMusicArtistas > div > progress{
+    margin-top: 10px;
+}
+#playerMusicArtistas > div > div {
+    margin-top: 3px;
+}
+#playerMusicArtistas > div > div > span {
+    margin-top: 0;
+    margin-bottom: 0;
+    scale: 0.8;
+}
+#playerMusicArtistas > img {
+    display: block;
+    width: 100%;
+    height: 33%;
+    margin-bottom: 5px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px #262d4c;
+    border: 1px double #6042c6d7;
+}
+#containerProgessoPlayerMusicArtistas {
+    display: block;
+    width: 100%;
+    height: 17%;
+}
+#playlistMusicArtistas {
+    display: block;
+    width: 100%;
+    height: 48%;
+    border-radius: 0 0 15px 15px;
+    scrollbar-width: thin;
+    overflow-y: scroll;
+}
+#playlistMusicArtistas > li {
+    display: flex;
+    height: 80px;
+    margin: auto;
+    padding: 10px;
+    text-align: left;
+    color: whitesmoke;
+    box-shadow: 0px 0px 15px #262d4c;
+    border: 1px double #6042c6d7;
+}
+#fundao{
+    position: fixed;
+    width: 100%;
+    height: 115%;
+    background-image: url("https://i.ytimg.com/vi/-J_77fQLUgs/maxresdefault.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+    transform: translateY(-60px);
+    z-index: -1;
+}
+#fundao::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background:  linear-gradient(60deg, #000011f8, #040442f8,#01012bf6, #000011f8);
+    z-index: -1;
+}
+/* ~~~~~~~ WEB-EXPLORE ~~~~~~~ */
+
+#container-explore-tipos-de-musicas {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+#container-explore-tipos-de-musicas > ul > ul {
+    margin: 10px;
+}
+#container-explore-tipos-de-musicas > h2 {
+    text-align: center;
+    margin: 30px 30px 40px 30px;
+}
+#container-explore-tipos-de-musicas > ul {
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+}
+#container-explore-tipos-de-musicas > ul > li {
+    position: relative;
+    display: inline-flex;
+    width: 17vw;
+    height: 10vw;
+    max-width: 160px;
+    max-height: 100px;
+    min-width: 80x;
+    min-height: 20px;
+    margin: 10px;
+    padding: 10px;
+    align-items: center;
+    border-radius: 15px;
+    background: linear-gradient(60deg,#01012b,#000122); 
+    border: 1px double #6042c6d7;
+    box-shadow: 0px 0px 5px #262d4c;
+    z-index: 2;
+}
+
+.lista-tipos-musicas{
+    margin: auto;
+    z-index: 1;
+}
+
+.lista-tipos-musicas::before {
+    position: absolute;
+    content: "";
+    width: 17vw;
+    height: 10vw;
+    max-width: 160px;
+    max-height: 100px;
+    min-width: 80x;
+    min-height: 20px;
+    top: 0;
+    left: 0;
+    margin: 10px;
+    padding: 10px;
+    align-items: center;
+    border-radius: 15px;
+    border: 1px double #6042c6d7;
+    transform: translateY(-14px) translateX(-14px);
+    z-index: -1;
+}
+.lista-tipos-musicas:hover::before{
+    scale: 0.8;
+    box-shadow: 0px 0px 5px #262d4c;
+    transition: 0.3s;
+}
+#container-explore-tipos-de-musicas > ul > ul > img {
+    width: 100%;
+    height: 50vw;
+    max-height: 320px;
+    border-radius: 30px;
+    border: 1px double #6042c6d7;
+    box-shadow: 0px 0px 5px #262d4c;
+}
+
+#container-explore-tipos-de-musicas > ul > ul > p {
+    width: 20%;
+    margin: 10px auto;
+    padding: 10px;
+    background: linear-gradient(60deg,#01012b,#000122); 
+    border-radius: 30px;
+    border: 1px double #6042c6d7;
+    box-shadow: 0px 0px 5px #262d4c;
+}
+
+/* ~~~~~~~ WEB-PODCAST ~~~~~~~ */
+#container-player-podcast {
+    width: 85%;
+    margin: auto;
+}
+#titulo-de-selecao-podcast {
+    margin: 20px 20px 30px 20px;
+    text-align: center;
+}
+#lista-de-podcasts{
+    margin: 5px;
+    align-items: center;
+}
+#lista-de-podcasts > li {
+    display: list-item;
+    width: 200px;
+    height: 50px;
+    margin: 20px auto;
+    text-align: center;
+    background: linear-gradient(60deg,#01012b,#000122); 
+    border-radius: 10px;
+    border: 1px double #6042c6d7;
+    box-shadow: 0px 0px 5px #262d4c;
+}
+#lista-de-podcasts > li > p {
+    transform: translateY(11.5px);
+    width: 100%;
+    height: 100%;
+    margin: 5px;
+}
+
+#lista-de-podcasts > li > p:hover {
+    scale: 1.1;
+    transition: all 0.3s;
+    text-shadow: 0px 0px 10px rgba(105, 49, 143, 0.644);
+}
+
+/* ~~~~~~~ WEB-PODCAST PLAYER ~~~~~~~ */
+#container-player-podcast{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+#container-podCasts{
+    max-width: 400px;
+    margin: auto;
+}
+#container-podCasts > ul {
+    margin: 20px;
+}
+#container-player-podcast > h2{
+    text-align: center;
+    margin: 20px auto 30px auto;
+}
+#player-podcast{
+    max-width: 600px;
+    min-height: 300px;
+    padding: 10px;
+    margin: auto;
+    background: linear-gradient(60deg,#01012b,#000122); 
+    border-radius: 10px;
+    border: 1px double #6042c6d7;
+    box-shadow: 0px 0px 5px #262d4c;
+}
+#player-podcast > iframe {
+    position: relative;
+    height: 43.5vw;
+    background: linear-gradient(60deg,#01012b,#000122); 
+    border-radius: 10px;
+    border: 1px double #37343fd7;
+    box-shadow: 0px 0px 5px #262d4c;
+}
+#titulo-player-podcast{
+    text-align: center;
+    margin: 0;
+}
+#titulo-player-podcast > h3 {
+    margin: 13px 0 8px 0;
+}
+#titulo-player-podcast > p {
+    margin-bottom: 10px;
+    font: 1.1em;
+    font-style: italic;
+    text-shadow: 1.5px 2.5px 3px #262d4c;
+}
+#titulo-de-selecao-podcast{
+    margin-top: 30px;
+}
+.barra-podcast {
+    margin-top: 18px;
+}
+.botoes-controle-podcast {
+    margin: 10px 0 7px 0;
+}
+.botao-podcast {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#voltar{
+    display: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background: linear-gradient(60deg,#01012b,#000122); 
+    border-radius: 10px;
+    border: 1px double #6042c6d7;
+    box-shadow: 0px 0px 5px #262d4c;
+}
+/* ~~~~~~~~~~~ ASIDE ~~~~~~~~~~~ */
+
+aside {
+    display: flex;
+    margin: 100px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-aside {
+    width: 45%;
+    height: 40px;
+    max-width: 200px;
+    padding: 10px;
+    margin: 5px;
+    background: linear-gradient(60deg,#01012b,#000122); 
+    border-radius: 10px;
+    border: 1px double #6042c6d7;
+    box-shadow: 0px 0px 5px #262d4c;
+}
+.item-aside > a{
+    display: block;
+    transform: translateY(8px);
+    font-size: 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+/* ~~~~~~~~~ rodapé créditos ~~~~~~~~~ */
+#credito > a{
+    text-decoration: none;
+}
+#credito{
+    margin: auto;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 15px;
+}
+#image-conta{
+    display: inline-block;
+    width: 110px;
+    height: 110px;
+    padding: 3px;
+    margin: 25px auto 10px auto;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px double #6042c6d7;
+    box-shadow: 0px 0px 5px #262d4c;
+}
+.fab {
+    margin: 5px;
+}
