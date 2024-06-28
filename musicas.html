@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PodTune - Musicas</title>
+    <meta name="theme-color" content="#000011"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="midias-query.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <span id="menuBurguer" onclick="menu()" class="material-symbols-outlined">menu</span>
+            
+                <ul id="menu">
+
+                    <li><span id="menuBurguerExit" onclick="menu()" class="material-symbols-outlined">close</span></li>
+                    <li><span  class="material-symbols-outlined icon-menu">home</span><a href="index.html">Home</a></li>
+                    <li><span  class="material-symbols-outlined icon-menu">Explore</span><a href="explore.html">Explore</a></li>
+                    <li><span  class="material-symbols-outlined icon-menu">group</span><a href="artistas.html">Artistas</a></li>
+                    <li><span  class="material-symbols-outlined icon-menu">headphones</span><a href="musicas.html">Músicas</a></li>
+                    <li><span  class="material-symbols-outlined icon-menu">podcasts</span><a href="podCast.html">Podcasts</a></li>
+                    <li><span  class="material-symbols-outlined icon-menu">playlist_play</span><a href="playlist.html">Playlist</a></li>
+                    <li><span  class="material-symbols-outlined icon-menu">library_music</span>Álbuns</li>
+                    <li><span  class="material-symbols-outlined icon-menu">favorite</span><a href="favoritos.html">Favoritos</a></li>
+
+                    <img id="image-conta" src="midia/image-anime.jpg" alt="imagem conta">
+                    <p id="credito"><i class="fab fa-instagram"></i><a  href="https://www.instagram.com/ru_morim?igsh=N2k1bWRtbzF3Z2Jm">Ruan Amorim</a></p>
+                </ul>
+            
+            <h1><span  class="material-symbols-outlined icon-menu">headset_mic</span>PodTune</h1>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="containerMP3" class="section-mp3">
+            <span onclick="stylePlayer(1000)" id="mp3ArrowRight" class="material-symbols-outlined mp3-arrow-right " >arrow_back_ios</span>
+            <div id="MP3" class="MP3">
+                
+                <img  id="img_capa_mp3" class="image-capa"  src="https://static.vecteezy.com/system/resources/previews/024/694/509/non_2x/mp3-file-lossy-audio-format-icon-vector.jpg" alt="imagem do cantor vmz">
+               <h2 id="name_cantor" class="nome-cantor">Anônimo</h2>
+                <p id="name_music" class="nome-music">Click em alguma música</p>
+                <div class="container-barra-tempo">
+                    <progress id="barra_music" class="barra-music" value="0" max="100"></progress>
+                    
+                    <div class="tempo-music">
+                        <p id="initial_time_music" class="inicio-tempo-music">00:00</p>
+                        <p id="final_time_music" class="final-tempo-music">03:33</p>
+                    </div>
+                </div>
+                <div class="botoes-controle-music">
+                    <span onclick="backMusic()" id="back_botao" class="material-symbols-outlined botao-voltar-music botao-mp3">first_page</span>
+                    <span onclick="playPause()" id="play_botao" class="material-symbols-outlined botao-play-music botao-mp3">play_arrow</span>
+                    <span onclick="playPause()" id="pause_botao" class="material-symbols-outlined botao-pause-music botao-mp3">pause</span>
+                    <span onclick="nextMusic()" id="next_botao" class="material-symbols-outlined botao-avancar-music botao-mp3">first_page</span>
+                </div>
+            </div>
+            <span onclick="stylePlayer(999)" id="mp3ArrowLeft" class="material-symbols-outlined mp3-arrow-left " >arrow_forward_ios</span>
+       </section>
+
+       <section id="container-musicas">
+            <h2>Músicas</h2>
+            <ul id="lista-musicas">
+
+            </ul>
+       </section>
+       <div id="fundao"></div>
+    </main>
+       <audio src=""></audio>
+       <script src="scripts/scriptWebMusicas/index.js"></script>
+</body>
+</html>
