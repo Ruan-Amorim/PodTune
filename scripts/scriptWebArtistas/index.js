@@ -1141,10 +1141,10 @@ function upDateBackPlayer() {
   
         // Define os metadados da música a partir de uma lista de músicas
         navigator.mediaSession.metadata = new MediaMetadata({
-          title: listaDeMusicas[numberMuisc].nome_musica, // Título da música
-          artist: listaDeMusicas[numberMuisc].nome_artista, // Nome do artista
+          title: playlistDeMusicas[numberMuisc].nome_musica, // Título da música
+          artist: playlistDeMusicas[numberMuisc].nome_artista, // Nome do artista
           artwork: [
-            { src: listaDeMusicas[numberMuisc].capa, sizes: '512x512', type: 'image/jpg' } // Imagem da capa do álbum
+            { src: playlistDeMusicas[numberMuisc].capa, sizes: '512x512', type: 'image/jpg' } // Imagem da capa do álbum
           ]
         });
     }
