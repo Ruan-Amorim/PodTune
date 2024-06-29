@@ -737,6 +737,7 @@ progress::-webkit-progress-value {
 }
 #pre-view-musicas > li {
     width: 97%;
+    margin: 10px;
 }
 #limpar {
     padding: 5px;
@@ -805,4 +806,7 @@ aside {
 }
 .fab {
     margin: 5px;
+}
+.space-bottom{
+    height: 100px;
 }
