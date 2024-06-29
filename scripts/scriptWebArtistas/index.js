@@ -1192,7 +1192,7 @@ if ('mediaSession' in navigator) {
     });
   }
   
-});
+}
 
 function scrollToTop() {
     // Usa window.scrollTo com comportamento 'smooth' para scrollar suavemente até o topo
