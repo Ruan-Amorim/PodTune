@@ -961,7 +961,7 @@ function playlistArtista(nome) {
     styeMusicAtual(numberMuisc, numberMuisc);
     background.style.backgroundImage = `url(${playlistDeMusicas[numberMuisc].capa})`;
     scrollToTop();
-    upDateBackPlayer();
+    
 };
 // MUDANDO ESTILO DO MUSICA ATUAL
 
@@ -1012,7 +1012,7 @@ function nextMusic() {
 
     styeMusicAtual(Number(numberMuisc == 0 ? tamanhoLista : numberMuisc-1), numberMuisc);
     background.style.backgroundImage = `url(${playlistDeMusicas[numberMuisc].capa})`;
-    upDateBackPlayer();
+    
 };
 
 function backMusic() {
@@ -1033,7 +1033,7 @@ function backMusic() {
 
     styeMusicAtual(Number(numberMuisc ==  tamanhoLista ? 0 : numberMuisc+1), numberMuisc);
     background.style.backgroundImage = `url(${playlistDeMusicas[numberMuisc].capa})`;
-    upDateBackPlayer();
+    
 };
 
 function clickMusic(number) {
@@ -1048,7 +1048,7 @@ function clickMusic(number) {
     pause_botao.style.display = "block";
     audio.play();
     background.style.backgroundImage = `url(${playlistDeMusicas[numberMuisc].capa})`;
-    upDateBackPlayer();
+   
 };
 // ATUALIZAÇÃO DA BARRA E DO TEMPO DA MUSICA
 
@@ -1135,7 +1135,6 @@ geradorDeArtistas();
 
 // PLAYER EM SEGUNDO PLANO
 
-function upDateBackPlayer() {
     // Verifica se o navegador suporta a Media Session API
 if ('mediaSession' in navigator) {
     // Obtém o elemento de áudio do documento HTML
@@ -1192,8 +1191,6 @@ if ('mediaSession' in navigator) {
     });
   }
   
-}
-
 function scrollToTop() {
     // Usa window.scrollTo com comportamento 'smooth' para scrollar suavemente até o topo
     window.scrollTo({
