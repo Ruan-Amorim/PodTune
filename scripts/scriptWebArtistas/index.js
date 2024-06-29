@@ -960,6 +960,7 @@ function playlistArtista(nome) {
     };
     styeMusicAtual(numberMuisc, numberMuisc);
     background.style.backgroundImage = `url(${playlistDeMusicas[numberMuisc].capa})`;
+    scrollToTop();
 };
 // MUDANDO ESTILO DO MUSICA ATUAL
 
@@ -988,6 +989,7 @@ function playPause() {
         MP3.style.animation = "3s";
         capaMp3.style.animation = "3s";
     }
+    upDateBackPlayer();
 };
 // FUNÇÃO PARRA AVANÇAR E RETROCEDER A MUSICA
 
@@ -1009,6 +1011,7 @@ function nextMusic() {
 
     styeMusicAtual(Number(numberMuisc == 0 ? tamanhoLista : numberMuisc-1), numberMuisc);
     background.style.backgroundImage = `url(${playlistDeMusicas[numberMuisc].capa})`;
+    upDateBackPlayer();
 };
 
 function backMusic() {
@@ -1029,6 +1032,7 @@ function backMusic() {
 
     styeMusicAtual(Number(numberMuisc ==  tamanhoLista ? 0 : numberMuisc+1), numberMuisc);
     background.style.backgroundImage = `url(${playlistDeMusicas[numberMuisc].capa})`;
+    upDateBackPlayer();
 };
 
 function clickMusic(number) {
@@ -1117,21 +1121,47 @@ navigator.mediaSession.setActionHandler('play', function() {
 navigator.mediaSession.setActionHandler('pause', function() {
     playPause();
 });
+
+function scrollToTop() {
+    // Usa window.scrollTo com comportamento 'smooth' para scrollar suavemente até o topo
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // 'smooth' para scrollar suavemente, 'auto' para scrollar instantaneamente
+    });
+}
+
 geradorDeArtistas(); 
 
 // PLAYER EM SEGUNDO PLANO
 
 // Verifica se o navegador suporta a Media Session API
-if ('mediaSession' in navigator) {
+
+function upDateBackPlayer() {
+    if ('mediaSession' in navigator) {
   
-    // Define os metadados da música a partir de uma lista de músicas
-    navigator.mediaSession.metadata = new MediaMetadata({
-      title: listaDeMusicas[numberMuisc].nome_musica, // Título da música
-      artist: listaDeMusicas[numberMuisc].nome_artista, // Nome do artista
-      artwork: [
-        { src: listaDeMusicas[numberMuisc].capa, sizes: '512x512', type: 'image/jpg' } // Imagem da capa do álbum
-      ]
-    });
+        // Define os metadados da música a partir de uma lista de músicas
+        navigator.mediaSession.metadata = new MediaMetadata({
+          title: listaDeMusicas[numberMuisc].nome_musica, // Título da música
+          artist: listaDeMusicas[numberMuisc].nome_artista, // Nome do artista
+          artwork: [
+            { src: listaDeMusicas[numberMuisc].capa, sizes: '512x512', type: 'image/jpg' } // Imagem da capa do álbum
+          ]
+        });
+    }
 }
-  
+// Atualiza a barra de progresso do player em segundo plano
+navigator.mediaSession.setPositionState({
+    duration: audio.duration,
+    playbackRate: audio.playbackRate,
+    position: audio.currentTime
+});
+
+// Escuta eventos de tempo de atualização para sincronizar o progresso
+audio.addEventListener('timeupdate', function() {
+    navigator.mediaSession.setPositionState({
+        duration: audio.duration,
+        playbackRate: audio.playbackRate,
+        position: audio.currentTime
+    });
+});
 
