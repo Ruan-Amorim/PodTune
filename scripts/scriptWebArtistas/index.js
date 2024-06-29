@@ -1148,7 +1148,7 @@ if ('mediaSession' in navigator) {
         title: playlistDeMusicas[numberMuisc].nome_musica, // Título da música
         artist: playlistDeMusicas[numberMuisc].nome_artista, // Nome do artista
         artwork: [
-          { src: playlistDeMusicas[numberMuisc].capa, sizes: '512x512', type: 'image/jpg' } // Imagem da capa do álbum
+          { src: playlistDeMusicas[numberMuisc].capa, sizes: '1024x768', type: 'image/jpg' } // Imagem da capa do álbum
         ]
       });
   
