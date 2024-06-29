@@ -1051,7 +1051,7 @@ function clickMusic(number) {
 // ATUALIZAÇÃO DA BARRA E DO TEMPO DA MUSICA
 
 barraMusic.addEventListener('click', function(e) {
-    const offsetX = e.offsetX
+    const offsetX = e.offsetX;
     const clickedPercentage = (offsetX / this.offsetWidth);
     const newTime = clickedPercentage * audio.duration;
     audio.currentTime = newTime;
@@ -1061,15 +1061,23 @@ audio.addEventListener('timeupdate', function() {
     const barraUpdate = Math.floor(audio.currentTime / audio.duration * 100);
     const minutos = Math.floor(audio.currentTime / 60);
     const segundos = Math.floor(audio.currentTime % 60);
-    const formatTime = (minutos < 10 ? '0' : ' ') + minutos + ':' + (segundos < 10 ? '0' : ' ' ) + segundos;
+    const formatTime = (minutos < 10 ? '0' : '') + minutos + ':' + (segundos < 10 ? '0' : '' ) + segundos;
     barraMusic.value = barraUpdate;
-    inicioMusica.textContent = formatTime; 
+    inicioMusica.textContent = formatTime;
     finalMusica.textContent = segParaMinutes(Math.floor(audio.duration));
     
     if (barraMusic.value == 100) {
         nextMusic();
     }
-    
+
+    // Atualiza a barra de progresso do player em segundo plano
+    if ('mediaSession' in navigator) {
+        navigator.mediaSession.setPositionState({
+            duration: audio.duration,
+            playbackRate: audio.playbackRate,
+            position: audio.currentTime
+        });
+    }
 });
 
 function segParaMinutes(segundos) {
@@ -1077,15 +1085,14 @@ function segParaMinutes(segundos) {
     let campoSegundos = segundos % 60;
     if (campoSegundos < 10) {
         campoSegundos = "0" + campoSegundos; 
-    }else{}
+    }
 
     if (campoMinutos < 10){
         campoMinutos = "0" + campoMinutos;
+    }
 
-    }else{}
-
-    return campoMinutos+ ':' +campoSegundos;
-};
+    return campoMinutos + ':' + campoSegundos;
+}
 
 // INTERAÇÃO COM O PLAYER DE MUSICA POR TECLAS
 
@@ -1109,6 +1116,7 @@ document.addEventListener('keydown', function(event) {
             break;
     }
 });
+
 navigator.mediaSession.setActionHandler('nexttrack', function() {
     nextMusic();
 });
@@ -1121,20 +1129,9 @@ navigator.mediaSession.setActionHandler('play', function() {
 navigator.mediaSession.setActionHandler('pause', function() {
     playPause();
 });
-
-function scrollToTop() {
-    // Usa window.scrollTo com comportamento 'smooth' para scrollar suavemente até o topo
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth' // 'smooth' para scrollar suavemente, 'auto' para scrollar instantaneamente
-    });
-}
-
 geradorDeArtistas(); 
 
 // PLAYER EM SEGUNDO PLANO
-
-// Verifica se o navegador suporta a Media Session API
 
 function upDateBackPlayer() {
     if ('mediaSession' in navigator) {
@@ -1147,21 +1144,31 @@ function upDateBackPlayer() {
             { src: playlistDeMusicas[numberMuisc].capa, sizes: '512x512', type: 'image/jpg' } // Imagem da capa do álbum
           ]
         });
+
+        // Atualiza a barra de progresso do player em segundo plano
+        navigator.mediaSession.setPositionState({
+            duration: audio.duration,
+            playbackRate: audio.playbackRate,
+            position: audio.currentTime
+        });
     }
 }
-// Atualiza a barra de progresso do player em segundo plano
-navigator.mediaSession.setPositionState({
-    duration: audio.duration,
-    playbackRate: audio.playbackRate,
-    position: audio.currentTime
-});
 
 // Escuta eventos de tempo de atualização para sincronizar o progresso
 audio.addEventListener('timeupdate', function() {
-    navigator.mediaSession.setPositionState({
-        duration: audio.duration,
-        playbackRate: audio.playbackRate,
-        position: audio.currentTime
-    });
+    if ('mediaSession' in navigator) {
+        navigator.mediaSession.setPositionState({
+            duration: audio.duration,
+            playbackRate: audio.playbackRate,
+            position: audio.currentTime
+        });
+    }
 });
 
+function scrollToTop() {
+    // Usa window.scrollTo com comportamento 'smooth' para scrollar suavemente até o topo
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // 'smooth' para scrollar suavemente, 'auto' para scrollar instantaneamente
+    });
+}
