@@ -961,6 +961,7 @@ function playlistArtista(nome) {
     styeMusicAtual(numberMuisc, numberMuisc);
     background.style.backgroundImage = `url(${playlistDeMusicas[numberMuisc].capa})`;
     scrollToTop();
+    upDateBackPlayer();
 };
 // MUDANDO ESTILO DO MUSICA ATUAL
 
@@ -1047,6 +1048,7 @@ function clickMusic(number) {
     pause_botao.style.display = "block";
     audio.play();
     background.style.backgroundImage = `url(${playlistDeMusicas[numberMuisc].capa})`;
+    upDateBackPlayer();
 };
 // ATUALIZAÇÃO DA BARRA E DO TEMPO DA MUSICA
 
