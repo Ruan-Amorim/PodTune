@@ -388,25 +388,29 @@ function stylePlayer(parametro) {
 // INTERAÇÃO COM O PLAYER DE MUSICA POR TECLAS
 
 document.addEventListener('keydown', function(event) {
-    switch (event.code) {
-        case "KeyD":
-            return nextMusic();
-        case "KeyA":
-            return backMusic();
-        case "KeyS":
-            return playPause();
-        case "Space":
-            return playPause();
-        case "ArrowRight":
-            return nextMusic();
-        case "ArrowLeft":
-            return backMusic();
-        case "ArrowDown":
-            return playPause();
-        default:
-            break;
+    if (!('mediaSession' in navigator) || !navigator.mediaSession.seekTo) {
+        
+        switch (event.code) {
+            case "KeyD":
+                return nextMusic();
+            case "KeyA":
+                return backMusic();
+            case "KeyS":
+                return playPause();
+            case "Space":
+                return playPause();
+            case "ArrowRight":
+                return nextMusic();
+            case "ArrowLeft":
+                return backMusic();
+            case "ArrowDown":
+                return playPause();
+            default:
+                break;
+        }
     }
 });
+
 navigator.mediaSession.setActionHandler('nexttrack', function() {
     nextMusic();
 });
@@ -419,3 +423,53 @@ navigator.mediaSession.setActionHandler('play', function() {
 navigator.mediaSession.setActionHandler('pause', function() {
     playPause();
 });
+
+
+
+// PLAYER EM SEGUNDO PLANO
+
+    // Verifica se o navegador suporta a Media Session API
+if ('mediaSession' in navigator) {
+  
+    // Função para atualizar os metadados e o estado da posição da música
+    function updateMediaSession() {
+      // Define os metadados da música a partir da lista de músicas
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: listaDeMusicas[numberMuisc].nome_musica, // Título da música
+        artist: listaDeMusicas[numberMuisc].nome_artista, // Nome do artista
+        artwork: [
+          { src: listaDeMusicas[numberMuisc].capa, sizes: '512x512', type: 'image/jpg' } // Imagem da capa do álbum
+        ]
+      });
+  
+      // Define o estado da posição da música
+      navigator.mediaSession.setPositionState({
+        duration: audio.duration || 0,
+        playbackRate: audio.playbackRate,
+        position: audio.currentTime || 0
+      });
+    }
+  
+    // Atualiza os metadados e o estado da posição da música quando o tempo de reprodução muda
+    audio.addEventListener('timeupdate', updateMediaSession);
+  
+    
+    navigator.mediaSession.setActionHandler('seekbackward', function() {
+      audio.currentTime = Math.max(audio.currentTime - 10, 0);
+      updateMediaSession();
+    });
+  
+    navigator.mediaSession.setActionHandler('seekforward', function() {
+      audio.currentTime = Math.min(audio.currentTime + 10, audio.duration);
+      updateMediaSession();
+    });
+  
+    navigator.mediaSession.setActionHandler('seekto', function(details) {
+      if (details.fastSeek && 'fastSeek' in audio) {
+        audio.fastSeek(details.seekTime);
+      } else {
+        audio.currentTime = details.seekTime;
+      }
+      updateMediaSession();
+    });
+};

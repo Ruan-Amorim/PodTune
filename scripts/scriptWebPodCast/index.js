@@ -158,7 +158,7 @@ function abrirTipo(tipo) {
 
 function randomSelecaoPodcast() {
     // Gerar um índice aleatório dentro do intervalo válido da listaDePodcast
-    let codigo = Math.floor(Math.random() * listaDePodcast.length);
+    var codigo = Math.floor(Math.random() * listaDePodcast.length);
 
     // Atualizar os elementos HTML com os dados do podcast selecionado aleatoriamente
     titulo.innerText = listaDePodcast[codigo].nomePodCast;
@@ -167,11 +167,38 @@ function randomSelecaoPodcast() {
 }
 
 
-function clickPodcast(codigo) {
-    titulo.innerText = listaAtual[codigo].nomePodCast;
-    nome.innerText = listaAtual[codigo].nome;
-    player.src = listaAtual[codigo].src;
+function clickPodcast(id) {
+    codigo = id
+    titulo.innerText = listaAtual[id].nomePodCast;
+    nome.innerText = listaAtual[id].nome;
+    player.src = listaAtual[id].src;
 }
 
 gerarTipos();
 randomSelecaoPodcast();
+
+// PLAYER EM SEGUNDO PLANO
+
+    // Verifica se o navegador suporta a Media Session API
+if ('mediaSession' in navigator) {
+  
+    // Função para atualizar os metadados e o estado da posição da música
+    function updateMediaSession() {
+      // Define os metadados da música a partir da lista de músicas
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: listaDePodcast[codigo].nome, // Título da música
+        artist: listaDePodcast[codigo].nomePodCast, // Nome do artista
+        artwork: [
+          { src: listaDePodcast[codigo].imageCapa, sizes: '512x512', type: 'image/jpg' } // Imagem da capa do álbum
+        ]
+      });
+  
+      // Define o estado da posição da música
+      navigator.mediaSession.setPositionState({
+        duration: audio.duration || 0,
+        playbackRate: audio.playbackRate,
+        position: audio.currentTime || 0
+      });
+    }
+  
+};
