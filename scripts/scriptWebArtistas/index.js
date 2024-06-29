@@ -1117,5 +1117,15 @@ navigator.mediaSession.setActionHandler('play', function() {
 navigator.mediaSession.setActionHandler('pause', function() {
     playPause();
 });
-
 geradorDeArtistas(); 
+
+// PLAYER EM SEGUNDO PLANO
+if ('mediaSession' in navigator) {
+        navigator.mediaSession.metadata = new MediaMetadata({
+        title: listaDeMusicas[numberMuisc].nome_musica,
+        artist: listaDeMusicas[numberMuisc].nome_artista,
+        artwork: listaDeMusicas[numberMuisc].capa,
+    });
+}
+
+
