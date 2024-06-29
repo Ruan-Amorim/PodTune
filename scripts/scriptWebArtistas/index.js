@@ -990,7 +990,7 @@ function playPause() {
         MP3.style.animation = "3s";
         capaMp3.style.animation = "3s";
     }
-    upDateBackPlayer();
+
 };
 // FUNÇÃO PARRA AVANÇAR E RETROCEDER A MUSICA
 
