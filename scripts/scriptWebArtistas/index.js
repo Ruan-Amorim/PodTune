@@ -1099,23 +1099,26 @@ function segParaMinutes(segundos) {
 // INTERAÇÃO COM O PLAYER DE MUSICA POR TECLAS
 
 document.addEventListener('keydown', function(event) {
-    switch (event.code) {
-        case "KeyD":
-            return nextMusic();
-        case "KeyA":
-            return backMusic();
-        case "KeyS":
-            return playPause();
-        case "Space":
-            return playPause();
-        case "ArrowRight":
-            return nextMusic();
-        case "ArrowLeft":
-            return backMusic();
-        case "ArrowDown":
-            return playPause();
-        default:
-            break;
+    if (!('mediaSession' in navigator) || !navigator.mediaSession.seekTo) {
+        
+        switch (event.code) {
+            case "KeyD":
+                return nextMusic();
+            case "KeyA":
+                return backMusic();
+            case "KeyS":
+                return playPause();
+            case "Space":
+                return playPause();
+            case "ArrowRight":
+                return nextMusic();
+            case "ArrowLeft":
+                return backMusic();
+            case "ArrowDown":
+                return playPause();
+            default:
+                break;
+        }
     }
 });
 
