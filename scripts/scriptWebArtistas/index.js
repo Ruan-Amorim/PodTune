@@ -961,7 +961,7 @@ function playlistArtista(nome) {
     styeMusicAtual(numberMuisc, numberMuisc);
     background.style.backgroundImage = `url(${playlistDeMusicas[numberMuisc].capa})`;
     scrollToTop();
-    
+    updateMediaSession();
 };
 // MUDANDO ESTILO DO MUSICA ATUAL
 
@@ -1012,7 +1012,7 @@ function nextMusic() {
 
     styeMusicAtual(Number(numberMuisc == 0 ? tamanhoLista : numberMuisc-1), numberMuisc);
     background.style.backgroundImage = `url(${playlistDeMusicas[numberMuisc].capa})`;
-    
+    updateMediaSession();  
 };
 
 function backMusic() {
@@ -1033,7 +1033,7 @@ function backMusic() {
 
     styeMusicAtual(Number(numberMuisc ==  tamanhoLista ? 0 : numberMuisc+1), numberMuisc);
     background.style.backgroundImage = `url(${playlistDeMusicas[numberMuisc].capa})`;
-    
+    updateMediaSession();
 };
 
 function clickMusic(number) {
@@ -1048,7 +1048,7 @@ function clickMusic(number) {
     pause_botao.style.display = "block";
     audio.play();
     background.style.backgroundImage = `url(${playlistDeMusicas[numberMuisc].capa})`;
-   
+    updateMediaSession();
 };
 // ATUALIZAÇÃO DA BARRA E DO TEMPO DA MUSICA
 
@@ -1137,8 +1137,6 @@ geradorDeArtistas();
 
     // Verifica se o navegador suporta a Media Session API
 if ('mediaSession' in navigator) {
-    // Obtém o elemento de áudio do documento HTML
-    const audio = document.getElementById('audio');
   
     // Função para atualizar os metadados e o estado da posição da música
     function updateMediaSession() {
@@ -1162,15 +1160,7 @@ if ('mediaSession' in navigator) {
     // Atualiza os metadados e o estado da posição da música quando o tempo de reprodução muda
     audio.addEventListener('timeupdate', updateMediaSession);
   
-    // Define handlers para as ações de play, pause, seekbackward, seekforward
-    navigator.mediaSession.setActionHandler('play', function() {
-      audio.play();
-    });
-  
-    navigator.mediaSession.setActionHandler('pause', function() {
-      audio.pause();
-    });
-  
+    
     navigator.mediaSession.setActionHandler('seekbackward', function() {
       audio.currentTime = Math.max(audio.currentTime - 10, 0);
       updateMediaSession();
@@ -1197,4 +1187,4 @@ function scrollToTop() {
       top: 0,
       behavior: 'smooth' // 'smooth' para scrollar suavemente, 'auto' para scrollar instantaneamente
     });
-}
+};
