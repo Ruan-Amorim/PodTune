@@ -169,6 +169,9 @@
         scale: 1.2;
         margin: 15px;
     }
+    #pre-view-musicas > li {
+        width: 90%;
+    }
 }
 @media  screen and (min-width: 500px) and (max-width: 550px){
     #fundao::before{
@@ -196,6 +199,9 @@
         scale: 1.2;
         margin: 15px;
     }
+    #pre-view-musicas > li {
+        width: 85%;
+    }
 }
 @media  screen and (min-width: 551px) and (max-width: 699px){
     #fundao::before{
@@ -219,7 +225,10 @@
         font-size: 0.9em;
         transform: translateY(-60px) translateX(45px);
     }
-    
+    #pre-view-musicas > li {
+        width: 85%;
+        margin: 10px
+    }
 }
 @media  screen and (min-width: 700px) and (max-width: 799px){
     #fundao::before{
