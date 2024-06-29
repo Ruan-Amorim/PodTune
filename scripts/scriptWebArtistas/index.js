@@ -1136,35 +1136,62 @@ geradorDeArtistas();
 // PLAYER EM SEGUNDO PLANO
 
 function upDateBackPlayer() {
-    if ('mediaSession' in navigator) {
+    // Verifica se o navegador suporta a Media Session API
+if ('mediaSession' in navigator) {
+    // Obtém o elemento de áudio do documento HTML
+    const audio = document.getElementById('audio');
   
-        // Define os metadados da música a partir de uma lista de músicas
-        navigator.mediaSession.metadata = new MediaMetadata({
-          title: playlistDeMusicas[numberMuisc].nome_musica, // Título da música
-          artist: playlistDeMusicas[numberMuisc].nome_artista, // Nome do artista
-          artwork: [
-            { src: playlistDeMusicas[numberMuisc].capa, sizes: '512x512', type: 'image/jpg' } // Imagem da capa do álbum
-          ]
-        });
-
-        // Atualiza a barra de progresso do player em segundo plano
-        navigator.mediaSession.setPositionState({
-            duration: audio.duration,
-            playbackRate: audio.playbackRate,
-            position: audio.currentTime
-        });
+    // Função para atualizar os metadados e o estado da posição da música
+    function updateMediaSession() {
+      // Define os metadados da música a partir da lista de músicas
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: playlistDeMusicas[numberMuisc].nome_musica, // Título da música
+        artist: playlistDeMusicas[numberMuisc].nome_artista, // Nome do artista
+        artwork: [
+          { src: playlistDeMusicas[numberMuisc].capa, sizes: '512x512', type: 'image/jpg' } // Imagem da capa do álbum
+        ]
+      });
+  
+      // Define o estado da posição da música
+      navigator.mediaSession.setPositionState({
+        duration: audio.duration || 0,
+        playbackRate: audio.playbackRate,
+        position: audio.currentTime || 0
+      });
     }
-}
-
-// Escuta eventos de tempo de atualização para sincronizar o progresso
-audio.addEventListener('timeupdate', function() {
-    if ('mediaSession' in navigator) {
-        navigator.mediaSession.setPositionState({
-            duration: audio.duration,
-            playbackRate: audio.playbackRate,
-            position: audio.currentTime
-        });
-    }
+  
+    // Atualiza os metadados e o estado da posição da música quando o tempo de reprodução muda
+    audio.addEventListener('timeupdate', updateMediaSession);
+  
+    // Define handlers para as ações de play, pause, seekbackward, seekforward
+    navigator.mediaSession.setActionHandler('play', function() {
+      audio.play();
+    });
+  
+    navigator.mediaSession.setActionHandler('pause', function() {
+      audio.pause();
+    });
+  
+    navigator.mediaSession.setActionHandler('seekbackward', function() {
+      audio.currentTime = Math.max(audio.currentTime - 10, 0);
+      updateMediaSession();
+    });
+  
+    navigator.mediaSession.setActionHandler('seekforward', function() {
+      audio.currentTime = Math.min(audio.currentTime + 10, audio.duration);
+      updateMediaSession();
+    });
+  
+    navigator.mediaSession.setActionHandler('seekto', function(details) {
+      if (details.fastSeek && 'fastSeek' in audio) {
+        audio.fastSeek(details.seekTime);
+      } else {
+        audio.currentTime = details.seekTime;
+      }
+      updateMediaSession();
+    });
+  }
+  
 });
 
 function scrollToTop() {
