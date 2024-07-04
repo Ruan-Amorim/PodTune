@@ -832,9 +832,9 @@ const listaDeMusicas = [
     },
     {
         "nome_artista": "Kimetsu no Yaiba", 
-        "nome_musica": "",
-        "capa": "",
-        "mp3": "", 
+        "nome_musica": "「Muzan vs Hashira Theme (Infinity Castle)」Demon Slayer S4 EP8 OST - Hashira Training Arc 鬼滅の刃",
+        "capa": "https://i.ytimg.com/vi/eqvR90rVseY/maxresdefault.jpg",
+        "mp3": "Audio/「Muzan vs Hashira Theme (Infinity Castle)」Demon Slayer S4 EP8 OST - Hashira Training Arc 鬼滅の刃(M4A_128K).m4a", 
         "like": "none",
         "tipo": "Soundtrack",
     },
@@ -882,6 +882,7 @@ const listaDeMusicas = [
 
 const arrayTypesImage = {
        "Clássica": "https://visitesaopaulo.com/wp-content/uploads/2023/05/Sala-Sao-Paulo-Divulgacao.png",
+       "Soundtrack": "https://sportshub.cbsistatic.com/i/2024/05/26/f44f1a63-0421-49b9-8ca6-58fdc9f0d761/oshi-no-ko-season-2-release-date-anime-poster.jpg",
        "Pop": "https://i0.wp.com/www.sabra.org.br/site/wp-content/uploads/2020/11/musica-pop-entenda-como-esse-estilo-surgiu-20200904142853.jpg.jpg?fit=800%2C448&ssl=1",
        "R&B/Soul": "https://i.pinimg.com/originals/7d/2a/9f/7d2a9fca264faa93561f72b5fc885fec.gif",
        "Trap": "https://akamai.sscdn.co/tb/letras-blog/wp-content/uploads/2020/11/f142840-musicas_de_trap_2110x640-1024x311.jpg",
