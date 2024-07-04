@@ -568,11 +568,19 @@ const listaDeMusicas = [
     },
     {
         "nome_artista": "Oshi no Ko", 
-        "nome_musica": "【推しの子】第2期ノンクレジットオープニング｜GEMN「ファタール」",
+        "nome_musica": "Opening Season 2 - GEMN",
         "capa": "https://i.ytimg.com/vi/PAcf55v6zqQ/maxresdefault.jpg",
         "mp3": "Audio/【推しの子】第2期ノンクレジットオープニング｜GEMN「ファタール」(M4A_128K).m4a", 
         "like": "none",
         "tipo": "Openings",
+    },
+    {
+        "nome_artista": "Oshi no Ko", 
+        "nome_musica": "Ending Season 2 「Burning」",
+        "capa": "https://i.ytimg.com/vi/JuS4iuhG-vc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBOEGnVcQzaWsyk_qjXs08GvrsKPQ",
+        "mp3": "Audio/【推しの子】第2期ノンクレジットエンディング｜羊文学「Burning」(M4A_128K).m4a", 
+        "like": "none",
+        "tipo": "Endings",
     },
     {
         "nome_artista": "Oshi no Ko", 
