@@ -38,7 +38,7 @@ let audio = document.querySelector('audio');
 
 let numberMuisc = 0;
 
-
+// LISTA DE MUSCIAS 
 const listaDeMusicas = [
     {
         "nome_artista": "JVKE", 
@@ -561,6 +561,22 @@ const listaDeMusicas = [
     },
     {
         "nome_artista": "Oshi no Ko", 
+        "nome_musica": "Opening Season 2 - GEMN",
+        "capa": "https://i.ytimg.com/vi/PAcf55v6zqQ/maxresdefault.jpg",
+        "mp3": "Audio/【推しの子】第2期ノンクレジットオープニング｜GEMN「ファタール」(M4A_128K).m4a", 
+        "like": "none",
+        "tipo": "Openings",
+    },
+    {
+        "nome_artista": "Oshi no Ko", 
+        "nome_musica": "Ending Season 2 「Burning」",
+        "capa": "https://i.ytimg.com/vi/JuS4iuhG-vc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBOEGnVcQzaWsyk_qjXs08GvrsKPQ",
+        "mp3": "Audio/【推しの子】第2期ノンクレジットエンディング｜羊文学「Burning」(M4A_128K).m4a", 
+        "like": "none",
+        "tipo": "Endings",
+    },
+    {
+        "nome_artista": "Oshi no Ko", 
         "nome_musica": "Ending 【Mephisto】",
         "capa": "https://i.ytimg.com/vi/plKHkrVcBxU/maxresdefault.jpg",
         "mp3": "Audio/Oshi no Ko - Ending 【Mephisto】 4K _ UHD Creditless _ CC(M4A_128K).m4a", 
@@ -806,6 +822,46 @@ const listaDeMusicas = [
         "mp3": "Audio/Wesley Black - King Of The World(MP3_160K).mp3", 
         "like": "none",
         "tipo": "Pop",
+    },
+    {
+        "nome_artista": "Kimetsu no Yaiba", 
+        "nome_musica": "Demon Slayer S4 EP8 OST",
+        "capa": "https://i.ytimg.com/vi/eqvR90rVseY/maxresdefault.jpg",
+        "mp3": "Audio/「Muzan vs Hashira Theme (Infinity Castle)」Demon Slayer S4 EP8 OST - Hashira Training Arc 鬼滅の刃(M4A_128K).m4a", 
+        "like": "none",
+        "tipo": "Soundtrack",
+    },
+    {
+        "nome_artista": "ルアン", 
+        "nome_musica": "OST 01",
+        "capa": "midia/6526344c3d1b347f6b594fa5a31c4c55.jpg",
+        "mp3": "Audio/ルアン - Ost 01.m4a", 
+        "like": "none",
+        "tipo": "Soundtrack",
+    },
+    {
+        "nome_artista": "ルアン", 
+        "nome_musica": "OST 03",
+        "capa": "https://preview.redd.it/season-3-visual-1920x1080-wallpaper-v0-a8txj6ki5g7b1.png?width=640&crop=smart&auto=webp&s=c5e00bce1d3bd1d372efbe6d12fde34364af26d8",
+        "mp3": "Audio/ルアン - ルアン - Ost 03 2024-07-03 02_10.m4a", 
+        "like": "none",
+        "tipo": "Soundtrack",
+    },
+    {
+        "nome_artista": "ルアン", 
+        "nome_musica": "OST 04",
+        "capa": "midia/images (1).jpeg",
+        "mp3": "Audio/ルアン - Ost 04.m4a", 
+        "like": "none",
+        "tipo": "Soundtrack",
+    },
+    {
+        "nome_artista": "ルアン", 
+        "nome_musica": "OST 06",
+        "capa": "midia/girl_warrior_armor_1060104_1920x1080.jpg",
+        "mp3": "Audio/ルアン - ルアン - OST 06 2024-07-04 02_41.m4a", 
+        "like": "none",
+        "tipo": "Soundtrack",
     },
 ];
 

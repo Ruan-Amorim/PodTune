@@ -832,7 +832,7 @@ const listaDeMusicas = [
     },
     {
         "nome_artista": "Kimetsu no Yaiba", 
-        "nome_musica": "「Muzan vs Hashira Theme (Infinity Castle)」Demon Slayer S4 EP8 OST - Hashira Training Arc 鬼滅の刃",
+        "nome_musica": "Demon Slayer S4 EP8 OST",
         "capa": "https://i.ytimg.com/vi/eqvR90rVseY/maxresdefault.jpg",
         "mp3": "Audio/「Muzan vs Hashira Theme (Infinity Castle)」Demon Slayer S4 EP8 OST - Hashira Training Arc 鬼滅の刃(M4A_128K).m4a", 
         "like": "none",
@@ -849,7 +849,7 @@ const listaDeMusicas = [
     {
         "nome_artista": "ルアン", 
         "nome_musica": "OST 03",
-        "capa": "midia/6beb3e0a04368bd13b4f8c915114d648.jpg",
+        "capa": "https://preview.redd.it/season-3-visual-1920x1080-wallpaper-v0-a8txj6ki5g7b1.png?width=640&crop=smart&auto=webp&s=c5e00bce1d3bd1d372efbe6d12fde34364af26d8",
         "mp3": "Audio/ルアン - ルアン - Ost 03 2024-07-03 02_10.m4a", 
         "like": "none",
         "tipo": "Soundtrack",
@@ -892,7 +892,7 @@ const arrayTypesImage = {
        "Lo-Fi": "https://i.pinimg.com/originals/1a/f6/89/1af689d42bdb7686df444f22925f9e89.gif",
     }; 
 
-const arrayTiposDeMusicas = ["Clássica", "Pop", "R&B/Soul", "Trap", "Vibe Anime", "Openings", "Endings", "Lo-Fi"];
+const arrayTiposDeMusicas = ["Clássica","Soundtrack", "Pop", "R&B/Soul", "Trap", "Vibe Anime", "Openings", "Endings", "Lo-Fi"];
 
 // FUNCAO PARA ABRIR TIPO DE MUSICA
 
