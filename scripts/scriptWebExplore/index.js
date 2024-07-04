@@ -568,6 +568,14 @@ const listaDeMusicas = [
     },
     {
         "nome_artista": "Oshi no Ko", 
+        "nome_musica": "【推しの子】第2期ノンクレジットオープニング｜GEMN「ファタール」",
+        "capa": "https://i.ytimg.com/vi/PAcf55v6zqQ/maxresdefault.jpg",
+        "mp3": "Audio/【推しの子】第2期ノンクレジットオープニング｜GEMN「ファタール」(M4A_128K).m4a", 
+        "like": "none",
+        "tipo": "Openings",
+    },
+    {
+        "nome_artista": "Oshi no Ko", 
         "nome_musica": "Ending 【Mephisto】",
         "capa": "https://i.ytimg.com/vi/plKHkrVcBxU/maxresdefault.jpg",
         "mp3": "Audio/Oshi no Ko - Ending 【Mephisto】 4K _ UHD Creditless _ CC(M4A_128K).m4a", 
