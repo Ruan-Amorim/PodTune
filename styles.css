@@ -85,6 +85,9 @@ html,body{
     background-size: cover;
     transition: filter 0.5s;
 }
+html {
+    background: #000011e8;
+}
 ::-webkit-scrollbar {
     display: none;
 }
