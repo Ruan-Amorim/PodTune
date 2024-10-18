@@ -86,7 +86,7 @@ html,body{
     transition: filter 0.5s;
 }
 html {
-    background: #000011e8;
+    background: #000011;
 }
 ::-webkit-scrollbar {
     display: none;
